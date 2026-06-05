@@ -119,17 +119,19 @@
 
  <video
   class="landing-video"
+  id="landingVideo"
   autoplay
   muted
   loop
   playsinline
   preload="auto"
-  poster="img/landing-poster.png"
+  poster="img/cube.png"
 >
+  <source src="img/cube.mp4" type="video/mp4" media="(max-width: 650px)">
   <source src="img/cube.mp4" type="video/mp4">
 </video>
 
-
+<div class="landing-video-fallback" id="landingVideoFallback"></div>
   <!-- SMALL CORNERS -->
 
   <div class="corner corner-left">
@@ -180,8 +182,8 @@
 </main>
 
  <!-- WORK SECTION -->
-
-<section class="work-section" id="work">
+  
+<section class="work-section reveal-section" id="work">
 
   <div class="work-top">
 
@@ -299,7 +301,7 @@
 </section>
 <!-- ABOUT SECTION -->
 
-<section class="about-section" id="about">
+<section class="about-section reveal-section" id="about">
 
   <div class="section-header about-header">
 
@@ -384,7 +386,7 @@
 
   <!-- EXPERIENCE / EDUCATION SECTION -->
 
-<section class="experience-section" id="experience">
+<section class="experience-section reveal-section" id="experience">
 
   <div class="experience-header">
 
@@ -471,7 +473,7 @@
 </section>
   <!-- CONTACT SECTION -->
 
- <section class="contact-section" id="contact">
+ <section class="contact-section reveal-section" id="contact">
 
   <div class="contact-inner">
 
