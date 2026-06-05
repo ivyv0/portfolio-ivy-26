@@ -41,77 +41,6 @@ body{
 }
 
 /* =========================
-   ORANGE NAVBAR
-========================= */
-
-.top-nav{
-  width:100%;
-  height:15vh;
-
-  background:var(--cream);
-
-  /* color:var(--black); */
-
-  display:grid;
-  grid-template-columns:2fr 1fr 1fr 1fr;
-
-  align-items:start;
-
-  padding:1.2rem 2rem;
-
-  border-bottom:0.02rem solid var(--cream);
-
-  position:relative;
-  z-index:100;
-}
-
-/* LOGO */
-
-.nav-logo{
-  font-size:clamp(3rem, 7vw, 7rem);
-
-  line-height:.7;
-
-  font-weight:950;
-
-  letter-spacing:-0.1em;
-}
-
-/* NAV COLUMNS */
-
-.nav-column{
-  display:flex;
-  flex-direction:column;
-
-  gap:.35rem;
-}
-
-.nav-column a{
-  color:var(--black);
-
-  text-decoration:none;
-
-  font-size:clamp(.7rem, .85vw, .9rem);
-
-  font-weight:800;
-
-  letter-spacing:.03em;
-
-  line-height:1;
-
-  width:fit-content;
-
-  transition:.25s ease;
-}
-
-.nav-column a:hover{
-  color:var(--primary-red);
-
-  transform:translateX(.2rem);
-}
-
-
-/* =========================
    LANDING
 ========================= */
 
@@ -290,30 +219,7 @@ body{
   background:var(--primary-red);
 }
 
-/* =========================
-   FOOTER TITLE
-========================= */
 
-.footer-title{
-  width:100%;
-
-  background:var(--cream);
-  color:var(--black);
-
-  text-align:center;
-
-  padding:1.2rem 1rem;
-
-  font-size:clamp(.65rem, .8vw, .9rem);
-
-  line-height:1.05;
-
-  font-weight:950;
-
-  letter-spacing:-.03em;
-
-  border-top:1px solid var(--black);
-}
 
 /* =========================
    TINY LABELS
@@ -414,6 +320,8 @@ body{
   letter-spacing:-.035em;
 }
 
+
+
 /* =========================
    WORK SECTION
 ========================= */
@@ -429,7 +337,7 @@ body{
   overflow:hidden;
 }
 
-/* TOP TEXT */
+/* TOP */
 
 .work-top{
   display:grid;
@@ -455,12 +363,14 @@ body{
   letter-spacing:-.08em;
 
   color:var(--white);
+
+  max-width:100%;
 }
 
 .work-top p{
   max-width:34rem;
 
-  color: var(--cream);
+  color:rgba(255,255,255,.68);
 
   font-size:1rem;
 
@@ -469,12 +379,12 @@ body{
   justify-self:end;
 }
 
-/* PROJECT GRID */
+/* GRID */
 
 .project-grid{
   display:grid;
 
-  grid-template-columns:repeat(4, 1fr);
+  grid-template-columns:repeat(4, minmax(0, 1fr));
 
   border-bottom:1px solid rgba(255,255,255,.18);
 }
@@ -587,6 +497,7 @@ body{
 }
 
 .project-card:hover .project-info h3{
+  
   color:var(--primary-orange);
 }
 
@@ -605,53 +516,113 @@ body{
   background:var(--white);
   color:var(--black);
 
-  font-size:1.3rem;
-
   flex-shrink:0;
 
+  position:relative;
+
   transition:.35s ease;
+}
+
+.arrow::before{
+  content:"";
+
+  width:.75rem;
+  height:.75rem;
+
+  border-top:2px solid currentColor;
+  border-right:2px solid currentColor;
+
+  transform:rotate(45deg);
+}
+
+.arrow::after{
+  content:"";
+
+  position:absolute;
+
+  width:1rem;
+  height:2px;
+
+  background:currentColor;
+
+  transform:translateX(-.15rem);
 }
 
 .project-card:hover .arrow{
   background:var(--primary-orange);
   color:var(--white);
 
-  transform:rotate(45deg);
+  transform:rotate(-45deg);
 }
+/* =========================
+   RESPONSIVE WORK
+========================= */
 
-/* WORK RESPONSIVE */
-
+/* tablet */
 @media(max-width:1100px){
 
   .work-top{
     grid-template-columns:1fr;
+
+    gap:1rem;
   }
 
   .work-top p{
     justify-self:start;
+
+    max-width:38rem;
   }
 
   .project-grid{
-    grid-template-columns:repeat(2, 1fr);
-  }
-
-  .project-card:nth-child(odd){
-    border-left:1px solid rgba(255,255,255,.18);
+    grid-template-columns:repeat(2, minmax(0, 1fr));
   }
 
   .project-card{
     border-bottom:1px solid rgba(255,255,255,.18);
   }
+
+  .project-card:nth-child(odd){
+    border-left:1px solid rgba(255,255,255,.18);
+  }
 }
 
+/* small tablet */
+@media(max-width:800px){
+
+  .work-section{
+    padding:4.5rem 1rem 5rem;
+  }
+
+  .work-top h2{
+    font-size:clamp(3.8rem, 14vw, 7rem);
+  }
+
+  .project-card{
+    min-height:30rem;
+  }
+
+  .project-info{
+    align-items:flex-start;
+  }
+}
+
+/* mobile */
 @media(max-width:650px){
 
   .work-section{
     padding:4rem 1rem;
   }
 
+  .work-top{
+    padding-bottom:2rem;
+  }
+
   .work-top h2{
-    font-size:clamp(3.5rem, 18vw, 6rem);
+    font-size:clamp(3.4rem, 18vw, 6rem);
+  }
+
+  .work-top p{
+    font-size:.9rem;
   }
 
   .project-grid{
@@ -664,21 +635,119 @@ body{
     border-left:1px solid rgba(255,255,255,.18);
     border-right:1px solid rgba(255,255,255,.18);
     border-bottom:1px solid rgba(255,255,255,.18);
+
+    padding:.9rem;
   }
 
   .project-image{
-    aspect-ratio:1 / .85;
+    aspect-ratio:1 / .82;
   }
 
   .project-info{
     align-items:flex-start;
   }
+
+  .project-tags span{
+    font-size:.58rem;
+  }
+
+  .arrow{
+    width:2.4rem;
+    height:2.4rem;
+  }
+}
+/* extra small phones fix */
+@media(max-width:560px){
+
+  .work-section{
+    padding:3.5rem .75rem 4rem;
+  }
+
+  .work-top{
+    gap:1rem;
+    padding-bottom:1.6rem;
+  }
+
+  .work-top h2{
+    font-size:clamp(2.8rem, 17vw, 4.8rem);
+
+    line-height:.88;
+
+    letter-spacing:-.055em;
+
+    max-width:100%;
+
+    overflow-wrap:break-word;
+    word-break:normal;
+  }
+
+  .work-top p{
+    max-width:100%;
+
+    font-size:.85rem;
+    line-height:1.5;
+  }
+
+  .project-grid{
+    grid-template-columns:minmax(0, 1fr);
+  }
+
+  .project-card{
+    padding:.75rem;
+
+    width:100%;
+    min-width:0;
+  }
+
+  .project-image{
+    aspect-ratio:1 / .9;
+  }
+
+  .project-info{
+    gap:.8rem;
+  }
+
+  .project-info h3{
+    font-size:clamp(1.45rem, 8vw, 2.2rem);
+
+    letter-spacing:-.045em;
+
+    overflow-wrap:break-word;
+  }
+
+  .project-tags{
+    gap:.35rem;
+  }
+
+  .project-tags span{
+    font-size:.54rem;
+
+    padding:.4rem .55rem;
+  }
+
+  .arrow{
+    width:2.25rem;
+    height:2.25rem;
+  }
 }
 
-/* =========================
-   ABOUT SECTION
-========================= */
+@media(max-width:390px){
 
+  .work-top h2{
+    font-size:clamp(2.5rem, 16vw, 3.8rem);
+
+    letter-spacing:-.04em;
+  }
+
+  .project-info{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .arrow{
+    margin-top:.5rem;
+  }
+}
 /* =========================
    ABOUT SECTION
 ========================= */
@@ -897,13 +966,13 @@ body{
 
 .resume-button:hover{
  
-  color:var(--primary-red);
+  color:var(--primary-orange);
 
   transform:translateY(-.18rem);
 }
 
 .resume-button:hover .resume-arrow{
-  color:var(--primary-red);
+  color:var(--primary-orange);
 
   transform:rotate(45deg);
 }

@@ -9,35 +9,93 @@
   >
 
   <title>Ivy Vo Portfolio</title>
+    <link rel="icon" type="image/png" href="img/weblogo.png">
 
   <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="nav.css">
 </head>
 
 <body>
 
-  <!-- ORANGE NAVBAR -->
+ <nav class="top-nav">
 
-  <nav class="top-nav">
+  <a href="index.html" class="nav-logo">
+    IV
+  </a>
 
-    <!-- <div class="nav-logo">
-      IV
-    </div> -->
+  <div class="nav-column desktop-nav">
+    <a href="index.html#work">WORK</a>
+    <a href="/img/cv.png">RESUME</a>
+  </div>
 
-    <div class="nav-column">
-      <a href="#work">WORK</a>
-      <a href="cv.pdf">RESUME</a>
+  <div class="nav-column desktop-nav">
+    <a href="index.html#about">ABOUT</a>
+    <a href="index.html#contact">CONTACT</a>
+  </div>
+
+  <div class="nav-column desktop-nav">
+    <a href="index.html#experience">EXPERIENCE</a>
+  </div>
+
+  <button class="menu-toggle" aria-label="Open menu">
+    MENU
+  </button>
+
+</nav>
+
+<div class="menu-overlay">
+
+  <button class="menu-close" aria-label="Close menu">
+    Close ×
+  </button>
+
+  <div class="menu-links">
+
+    <a href="index.html#about">
+      ABOUT
+      <span>01</span>
+    </a>
+
+    <a href="index.html#work">
+      WORK
+      <span>02</span>
+    </a>
+
+    <a href="index.html#experience">
+      EXPERIENCE
+      <span>03</span>
+    </a>
+
+    <a href="cv.pdf">
+      RESUME
+      <span>04</span>
+    </a>
+
+    <a href="index.html#contact">
+      CONTACT
+      <span>05</span>
+    </a>
+
+  </div>
+
+  <div class="menu-socials">
+
+    <p>Socials</p>
+
+    <div>
+      <a href="https://www.linkedin.com/public-profile/settings/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_self_edit_contact_info%3BYmnSw0SLS3mF9ZpnHBcqWw%3D%3D" target="_blank">
+        LinkedIn
+      </a>
+
+      <a href="mailto:vohtgv@gmail.com">
+        Email
+      </a>
+
     </div>
 
-    <div class="nav-column">
-      <a href="#about">ABOUT</a>
-      <a href="#contact">CONTACT</a>
-    </div>
+  </div>
 
-    <div class="nav-column">
-      <a href="#archive">ARCHIVE</a>
-    </div>
-
-  </nav>
+</div>
 
   <!-- LANDING PAGE -->
 
@@ -117,79 +175,79 @@
 
   <div class="project-grid">
 
-    <a href="#" class="project-card">
+ <a href="themorningbrew.html" class="project-card">
+
+  <div class="project-image">
+    <img src="img/work/themorningbrew.png" alt="The Morning Brew project">
+  </div>
+
+  <div class="project-info">
+
+    <div>
+      <div class="project-tags">
+        <span>Visual Interface</span>
+        <span>Dashboard</span>
+        <span>UI</span>
+      </div>
+
+      <h3>The Morning Brew</h3>
+    </div>
+
+  <span class="arrow" aria-hidden="true"></span>
+
+  </div>
+
+</a>
+
+    <a href="parasite.html" class="project-card">
 
       <div class="project-image">
-        <img src="img/work/adsync.png" alt="Adsync project">
+        <img src="img/work/parasite.png" alt="Living Above Surviving Below project">
       </div>
 
       <div class="project-info">
 
         <div>
-          <div class="project-tags">
-            <span>UI/UX</span>
-            <span>Branding</span>
-            <span>Web</span>
-          </div>
+       <div class="project-tags">
+  <span>Visual</span>
+  <span>Storytelling</span>
+  <span>Typography</span>
+</div>
 
-          <h3>Adsync</h3>
+<h3>Living Above, Surviving Below</h3>
         </div>
 
-        <span class="arrow">↗</span>
+      <span class="arrow" aria-hidden="true"></span>
 
       </div>
 
     </a>
 
-    <a href="#" class="project-card">
+    <a href="poolhouse.html" class="project-card">
 
       <div class="project-image">
-        <img src="img/work/aino.png" alt="Aino project">
+        <img src="img/work/poolhouse2.png" alt="Poolhouse blender project">
       </div>
 
       <div class="project-info">
 
         <div>
-          <div class="project-tags">
-            <span>UX Research</span>
-            <span>Interface</span>
-            <span>Concept</span>
-          </div>
+      <div class="project-tags">
+        <span>Blender</span>
+        <span>3D</span>
+        <span>Lighting</span>
+      </div>
 
-          <h3>Aino</h3>
-        </div>
+      <h3>Poolhouse Arcade</h3>
+    </div>
 
-        <span class="arrow">↗</span>
+  <span class="arrow" aria-hidden="true"></span>
 
       </div>
 
     </a>
 
-    <a href="#" class="project-card">
-
-      <div class="project-image">
-        <img src="img/work/flyhyer.png" alt="Flyhyer project">
-      </div>
-
-      <div class="project-info">
-
-        <div>
-          <div class="project-tags">
-            <span>App Design</span>
-            <span>UI</span>
-            <span>Prototype</span>
-          </div>
-
-          <h3>Flyhyer</h3>
-        </div>
-
-        <span class="arrow">↗</span>
-
-      </div>
-
-    </a>
-
-    <a href="#" class="project-card">
+    <a href="freethemap.html" class="project-card">
 
       <div class="project-image">
         <img src="img/work/freethemap.png" alt="Free The Map project">
@@ -207,7 +265,7 @@
           <h3>Free The Map</h3>
         </div>
 
-        <span class="arrow">↗</span>
+       <span class="arrow" aria-hidden="true"></span>
 
       </div>
 
@@ -269,7 +327,7 @@
       <div class="about-actions">
   <a href="/img/cv.png" class="resume-button" target="_blank">
     <span>View Resume</span>
-    <span class="resume-arrow">↗</span>
+   <span class="arrow" aria-hidden="true"></span>
   </a>
 </div>
 
@@ -408,14 +466,15 @@
 
     <div class="contact-links">
 
-      <a href="mailto:vohtgv@gmail.com" class="contact-link">
-        vohtgv@gmail.com ↗
-      </a>
+  <a href="mailto:vohtgv@gmail.com" class="contact-link">
+  <span>vohtgv@gmail.com</span>
+  <span class="inline-arrow" aria-hidden="true"></span>
+</a>
 
-      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" class="contact-link">
-        LinkedIn ↗
-      </a>
-
+<a href="https://www.linkedin.com/in/YOUR-LINKEDIN-USERNAME" target="_blank" class="contact-link">
+  <span>LinkedIn</span>
+  <span class="inline-arrow" aria-hidden="true"></span>
+</a>
     </div>
 
   </div>
