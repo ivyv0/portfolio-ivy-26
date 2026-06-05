@@ -13,9 +13,25 @@
 
   <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="nav.css">
+     <link rel="stylesheet" href="load.css">
 </head>
 
 <body>
+  <div class="page-loader" id="pageLoader">
+
+  <div class="loader-inner">
+
+    <span class="loader-logo">
+      IV
+    </span>
+
+    <p>
+      LOADING PORTFOLIO
+    </p>
+
+  </div>
+
+</div>
 
  <nav class="top-nav">
 
@@ -101,10 +117,17 @@
 
  <main class="landing">
 
-  <video class="landing-video" autoplay muted loop playsinline>
-    <source src="img/cube.mp4" type="video/mp4" >
-    
-  </video>
+ <video
+  class="landing-video"
+  autoplay
+  muted
+  loop
+  playsinline
+  preload="auto"
+  poster="img/landing-poster.png"
+>
+  <source src="img/cube.mp4" type="video/mp4">
+</video>
 
 
   <!-- SMALL CORNERS -->

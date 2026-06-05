@@ -83,6 +83,27 @@ body{
   opacity:.95;
 }
 
+.landing-video{
+  object-fit:contain;
+}
+
+/* mobile video fallback / safer sizing */
+@media(max-width:650px){
+
+  .landing-video{
+    top:28%;
+    left:50%;
+
+    width:min(110vw, 34rem);
+
+    max-height:42vh;
+
+    object-fit:contain;
+
+    z-index:35;
+  }
+}
+
 /* =========================
    SMALL CORNER DOTS
 ========================= */

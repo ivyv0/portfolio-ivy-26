@@ -19,3 +19,11 @@ menuLinks.forEach((link) => {
     document.body.style.overflow = "";
   });
 });
+
+const pageLoader = document.getElementById("pageLoader");
+
+window.addEventListener("load", () => {
+  setTimeout(() => {
+    pageLoader.classList.add("is-hidden");
+  }, 600);
+});
