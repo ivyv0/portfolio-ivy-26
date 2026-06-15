@@ -115,7 +115,6 @@ if(heroVideo){
     { once:true }
   );
 
-  heroVideo.addEventListener("stalled", showVideoFallback);
   heroVideo.addEventListener("error", showVideoFallback);
 
 }

@@ -121,6 +121,85 @@ html{
 
   will-change:transform;
 }
+.landing-video{
+  position:absolute;
+
+  left:52%;
+  top:26%;
+
+  transform:translate(-50%, -50%);
+
+  width:min(72vw, 62rem);
+  height:auto;
+
+  z-index:35;
+
+  display:block;
+
+  pointer-events:none;
+
+  mix-blend-mode:multiply;
+
+  opacity:.95;
+
+  transition:
+    transform .7s cubic-bezier(.22,1,.36,1),
+    opacity .5s ease;
+
+  will-change:transform;
+}
+
+.landing-video.video-failed{
+  opacity:0;
+}
+
+.landing-video-fallback{
+  position:absolute;
+
+  left:52%;
+  top:26%;
+
+  transform:translate(-50%, -50%);
+
+  width:min(72vw, 62rem);
+  height:42vh;
+
+  background:url("img/cube.png") center / contain no-repeat;
+
+  z-index:34;
+
+  pointer-events:none;
+
+  display:none;
+
+  mix-blend-mode:multiply;
+}
+
+.landing-video-fallback.is-visible{
+  display:block;
+}
+
+@media(max-width:650px){
+
+  .landing-video{
+    left:50%;
+    top:28%;
+
+    width:min(110vw, 34rem);
+
+    max-height:42vh;
+
+    object-fit:contain;
+  }
+
+  .landing-video-fallback{
+    left:50%;
+    top:28%;
+
+    width:min(110vw, 34rem);
+    height:42vh;
+  }
+}
 
 /* tiny labels cinematic entrance */
 
