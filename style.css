@@ -219,9 +219,9 @@ html{
 .landing-video{
   position:absolute;
 
-  left:52%;
+  left:50%;
   top:27%;
- 
+
   transform:translate(-50%, -50%);
 
   width:min(68vw, 58rem);
@@ -233,13 +233,12 @@ html{
 
   pointer-events:auto;
 
+  object-fit:contain;
+
   mix-blend-mode:multiply;
 
   opacity:.95;
-}
 
-.landing-video{
-  object-fit:contain;
   background:transparent;
 }
 
@@ -250,12 +249,12 @@ html{
 .landing-video-fallback{
   position:absolute;
 
-  left:52%;
-  top:26%;
+  left:50%;
+  top:27%;
 
   transform:translate(-50%, -50%);
 
-  width:min(72vw, 62rem);
+  width:min(68vw, 58rem);
   height:42vh;
 
   background:url("img/cube.png") center / contain no-repeat;
@@ -265,21 +264,12 @@ html{
   pointer-events:none;
 
   display:none;
+
+  mix-blend-mode:multiply;
 }
 
 .landing-video-fallback.is-visible{
   display:block;
-}
-
-@media(max-width:650px){
-
-  .landing-video-fallback{
-    left:50%;
-    top:28%;
-
-    width:min(110vw, 34rem);
-    height:42vh;
-  }
 }
 
 /* =========================
@@ -318,12 +308,16 @@ html{
    TINY LABELS
 ========================= */
 
+
 .tiny-label{
   position:absolute;
 
+  left:50%;
   top:61%;
 
-  font-size:.45rem;
+  transform:translateX(-50%);
+
+  font-size:.48rem;
 
   font-weight:950;
 
@@ -334,12 +328,10 @@ html{
   z-index:70;
 }
 
-.label-left{
-  left:33%;
-}
+.label-center{
+  left:50%;
 
-.label-right{
-  right:35%;
+  transform:translateX(-50%);
 }
 
 /* =========================
@@ -350,13 +342,13 @@ html{
   position:absolute;
 
   left:50%;
-  bottom:11%;
+  bottom:10.5%;
 
   transform:translateX(-50%);
 
   text-align:center;
 
-  width:min(90vw, 30rem);
+  width:min(90vw, 32rem);
 
   z-index:80;
 }
@@ -370,7 +362,7 @@ html{
 
   letter-spacing:-.04em;
 
-  margin-bottom:1.1rem;
+  margin-bottom:1rem;
 
   color:var(--black);
 }
@@ -383,106 +375,6 @@ html{
   letter-spacing:.07em;
 
   color:var(--primary-red);
-}
-
-
-/* =========================
-   SMALL CORNER DOTS
-========================= */
-
-.corner{
-  position:absolute;
-
-  top:1.5rem;
-
-  display:flex;
-  gap:.25rem;
-
-  z-index:30;
-}
-
-.corner-left{
-  left:1.5rem;
-}
-
-.corner-right{
-  right:1.5rem;
-}
-
-.corner span{
-  width:.3rem;
-  height:.3rem;
-
-  border-radius:50%;
-
-  background:var(--primary-red);
-}
-
-
-
-/* =========================
-   TINY LABELS
-========================= */
-
-.tiny-label{
-  position:absolute;
-
-  top:63%;
-
-  font-size:.45rem;
-
-  font-weight:950;
-
-  letter-spacing:.08em;
-
-  z-index:30;
-}
-
-.label-left{
-  left:34%;
-}
-
-.label-right{
-  right:38%;
-}
-
-/* =========================
-   CENTER TEXT
-========================= */
-
-.center-text{
-  position:absolute;
-
-  left:50%;
-  bottom:10%;
-
-  transform:translateX(-50%);
-
-  text-align:center;
-
-  width:22rem;
-
-  z-index:40;
-}
-
-.center-text p{
-  font-size:clamp(.75rem, 1vw, 1rem);
-
-  line-height:1.05;
-
-  font-weight:950;
-
-  letter-spacing:-.04em;
-
-  margin-bottom:.8rem;
-}
-
-.center-text small{
-  font-size:.45rem;
-
-  font-weight:900;
-
-  letter-spacing:.05em;
 }
 
 /* =========================
@@ -519,7 +411,188 @@ html{
   letter-spacing:-.035em;
 }
 
+/* =========================
+   RESPONSIVE LANDING
+========================= */
 
+@media(max-width:900px){
+
+  .landing{
+    height:88vh;
+
+    padding:1.2rem;
+  }
+
+  .landing-video,
+  .landing-video-fallback{
+    left:50%;
+    top:28%;
+
+    width:min(92vw, 38rem);
+  }
+
+  .tiny-label{
+    top:58%;
+  }
+
+  .label-left{
+    left:50%;
+
+    transform:translateX(-9.5rem);
+  }
+
+  .label-right{
+    left:50%;
+
+    transform:translateX(6.8rem);
+  }
+
+  .center-text{
+    bottom:15%;
+
+    width:min(82vw, 28rem);
+  }
+
+  .big-name{
+    bottom:-.35rem;
+
+    font-size:clamp(6rem, 24vw, 13rem);
+  }
+
+  .name-left{
+    left:.5rem;
+  }
+
+  .name-right{
+    right:1rem;
+  }
+}
+
+@media(max-width:650px){
+
+  .landing{
+    height:86vh;
+
+    padding:1rem;
+  }
+
+  .landing-video,
+  .landing-video-fallback{
+    left:50%;
+    top:27%;
+
+    width:min(105vw, 32rem);
+    max-height:38vh;
+  }
+
+  .landing-video-fallback{
+    height:38vh;
+  }
+
+  .tiny-label{
+    top:55.5%;
+
+    font-size:.42rem;
+  }
+
+  .label-left{
+    left:50%;
+
+    transform:translateX(-7.2rem);
+  }
+
+  .label-right{
+    left:50%;
+
+    transform:translateX(4.9rem);
+  }
+
+  .center-text{
+    bottom:18%;
+
+    width:min(86vw, 24rem);
+  }
+
+  .center-text p{
+    font-size:clamp(.7rem, 3.3vw, .95rem);
+
+    line-height:1.05;
+
+    margin-bottom:.8rem;
+  }
+
+  .center-text small{
+    font-size:.42rem;
+  }
+
+  .big-name{
+    bottom:.15rem;
+
+    font-size:clamp(5.3rem, 28vw, 9rem);
+  }
+
+  .name-left{
+    left:.45rem;
+  }
+
+  .name-right{
+    right:.6rem;
+  }
+}
+
+@media(max-width:430px){
+
+  .landing{
+    height:84vh;
+  }
+
+  .landing-video,
+  .landing-video-fallback{
+    top:26%;
+
+    width:min(112vw, 28rem);
+  }
+
+  .tiny-label{
+    top:53%;
+  }
+
+  .label-left{
+    transform:translateX(-6.2rem);
+  }
+
+  .label-right{
+    transform:translateX(4.1rem);
+  }
+
+  .center-text{
+    bottom:20%;
+
+    width:min(88vw, 20rem);
+  }
+
+  .center-text p{
+    font-size:clamp(.65rem, 3.6vw, .82rem);
+  }
+
+  .center-text small{
+    font-size:.38rem;
+  }
+
+  .big-name{
+    bottom:.4rem;
+
+    font-size:clamp(4.5rem, 29vw, 7.5rem);
+  }
+
+  .name-left{
+    left:.35rem;
+  }
+
+  .name-right{
+    right:.45rem;
+  }
+}
 
 /* =========================
    WORK SECTION
@@ -997,17 +1070,17 @@ html{
 .about-layout{
   display:grid;
   grid-template-columns:.9fr 1.1fr;
-
   gap:1.2rem;
-
   align-items:stretch;
 }
 
 /* LEFT IMAGE CARD */
 
+
+
 .about-image-card{
   width:100%;
-
+  height:100%;
   min-height:42rem;
 
   border:1px solid rgba(255,255,255,.5);
@@ -1017,15 +1090,20 @@ html{
   overflow:hidden;
 
   background:#111;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
 
 .about-image-card img{
   width:100%;
-  height:100%;
+  height:70%;
 
   display:block;
 
   object-fit:cover;
+  object-position:center center;
 
   filter:
     contrast(.95)
@@ -1036,8 +1114,10 @@ html{
 }
 
 .about-image-card:hover img{
-  transform:scale(1.04);
+  transform:scale(1.03);
 }
+
+/* RIGHT CONTENT CARD */
 
 /* RIGHT CONTENT CARD */
 
@@ -1056,7 +1136,6 @@ html{
 
   background:rgba(255,255,255,.025);
 }
-
 /* MAIN ABOUT TEXT */
 
 .about-text{
@@ -1250,6 +1329,7 @@ html{
   .about-image-card{
     height:34rem;
   }
+  
 }
 
 @media(max-width:650px){
@@ -1273,8 +1353,14 @@ html{
     padding:1.2rem;
   }
 
+  
   .about-image-card{
-    height:28rem;
+    height:34rem;
+    min-height:auto;
+  }
+
+  .about-image-card img{
+    height:100%;
   }
 
   .about-text p{
